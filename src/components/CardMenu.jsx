@@ -1,8 +1,6 @@
-import bmi from './../assets/bmi.png'
-
-export default function CardMenu({showTitle, showPic}) {
+export default function CardMenu({showTitle, showPic, showDetail}) {
   return (
-<div className='border border-gray-400 p-5 rounded-2xl w-75 shaodow-xl flex flex-col items-center gap-3'>
+<div className='border border-gray-400 p-5 rounded-2xl w-75 shadow-xl flex flex-col items-center gap-3'>
 {/*แสดงรูปภาพ*/}
 <img src={showPic} alt={`รูป ${showTitle}`} className='w-30' />
 

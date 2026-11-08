@@ -4,7 +4,7 @@ import bmi from './../assets/bmi.png'
 import bmr from './../assets/bmr.png'
 import car from './../assets/car.png'
 import Footer from '../components/Footer'
-import Link from '../assets/bmi.png'
+import { Link } from 'react-router'
 
 
 export default function Home() {
@@ -13,7 +13,6 @@ export default function Home() {
     <>
       {/*ส่วนแสดงรูปภาพ*/}
       <div className='flex justify-center mt-30'>
-        <Link to
         <img src={calculate} alt="Calculate" className='w-30' />
       </div>
 
@@ -22,14 +21,22 @@ export default function Home() {
         <p className='font-kanit text-3xl font-bold text-blue-700'>เครื่องมือคำนวณออนไลน์</p>
         <p className='font-itim text-xl text-blue-500'>เลือกการคำนวณที่คุณต้องการจากเมนูด้านล่าง</p>
       </div>
-      
+
       {/* ส่วนของแสดงการ์ดเมนูที่สร้างไว้ */}
       <div className='flex justify-center mt-15 gap-5'>
-        <CardMenu showTitle="BMI (ดัชนีมวลกาย)" showPic={Bmi} showDetail="คำนวนค่าน้ำหนักของคุณว่าเหมาะสมหรือไม่" />
-        <CardMenu showTitle="BMR (อัตราการเผาผลาญ)" showPic={Bmr} showDetail="คำนวนอัตราการเผาผลาญที่ร่างกายต้องการ" />
-        <CardMenu showTitle="การผ่อนชำระรถยนต์" showPic={Car} showDetail="คำนวนการผ่อนชำระรถยนต์ต่อเดือน" />
-
+        <Link to="/bmi">
+          <CardMenu showTitle="BMI (ดัชนีมวลกาย)" showPic={bmi} showDetail="คำนวนค่าน้ำหนักของคุณว่าเหมาะสมหรือไม่" />
+        </Link>
+        <Link to="/bmr">
+          <CardMenu showTitle="BMR (อัตราการเผาผลาญ)" showPic={bmr} showDetail="คำนวนอัตราการเผาผลาญที่ร่างกายต้องการ" />
+        </Link>
+        <Link to="/car">
+          <CardMenu showTitle="การผ่อนชำระรถยนต์" showPic={car} showDetail="คำนวนการผ่อนชำระรถยนต์ต่อเดือน" />
+        </Link>
       </div>
+
+      {/* ส่วนท้าย Footer */}
+      <Footer />
     </>
   )
 }
